@@ -1,0 +1,28 @@
+<html>
+    <body>
+        <p>
+            <strong>Measure</strong>
+            Speed:
+            <select id="speedSelection">
+                <option value="fast" selected="selected">Fast</option>
+                <option value="slow">Slow</option>
+            </select>
+            <button onclick="saveMeasurement()">Send data</button>
+            <canvas id='measure_canvas' width="150" height="150" style="display:block"></canvas>
+        <div id="dataToSend">
+            
+        </div>
+        </p>
+    <p>
+        <strong>Detect</strong>
+        <button onclick="detectSpeed()">Decide</button>
+
+        <canvas id='detect_canvas' width="150" height="150" style="display:block"></canvas>
+        <div id="decisionResult">
+    </p>
+    </body>
+<script src="jquery-2.1.3.min.js"></script>
+<script src="jquery-mousewheel.js"></script>
+<script src="firebase.js"></script>
+<script src="test.js"></script>
+</html>
