@@ -26,7 +26,7 @@ describe('Detection algorithms', function() {
                     allCnt++;
                 }
             }
-            var allowedMissRatio = 0.95;
+            var allowedMissRatio = 0.9;
             assert(allowedMissRatio < succCnt / allCnt, 'Algorithm is worse than allowed miss ratio:' + allowedMissRatio + ':correct:' + succCnt + ":from:" + allCnt);
         })
     })

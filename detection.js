@@ -30,4 +30,10 @@ function detectSpeed(tD, yD) {
 }
 
 detection.detectSpeed = detectSpeed;
-module.exports = detection; 
+try {
+    module.exports = detection; 
+}
+catch (e) {
+    // prototype code.
+    }
+    
