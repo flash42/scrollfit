@@ -1,6 +1,5 @@
-var measureCanvas = $("#measure_canvas");
+var scrollArea = $("#scrollArea");
 var detectCanvas = $("#detect_canvas");
-var measureCtx = measureCanvas[0] ? measureCanvas[0].getContext("2d") : null;
 var detectCtx = detectCanvas[0] ? detectCanvas[0].getContext("2d") : null;
 var yD = [];
 var tD = [];
@@ -41,8 +40,8 @@ function updateUI() {
 }
 
 // Event listeners
-measureCanvas.mousewheel(function(event) {
-    console.log('@measureCanvas:event:', event.deltaX, event.deltaY, event.deltaFactor);
+scrollArea.mousewheel(function(event) {
+    console.log('@scrollArea:event:', event.deltaX, event.deltaY, event.deltaFactor);
     var currentTime = Date.now();
     var lastTime = eventTimes[eventTimes.length - 1];
     if (lastTime)
@@ -53,7 +52,6 @@ measureCanvas.mousewheel(function(event) {
     eventTimes.push(currentTime);
     updateUI();
     event.stopPropagation();
-    event.preventDefault();
 });
 
 detectCanvas.mousewheel(function(event) {
@@ -92,12 +90,7 @@ function handleDetect(tD, yD) {
 }
 
 // Draw canvas
-if (measureCtx) {
-measureCtx.beginPath();
-measureCtx.fillStyle = "black";
-measureCtx.font="20px Georgia";
-measureCtx.fillText("Scroll here", 25,75);
-}
+
 if (detectCtx) {
     detectCtx.beginPath();
     detectCtx.font="20px Georgia";
