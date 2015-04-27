@@ -13,17 +13,20 @@ describe('Detection algorithms', function() {
             for (var key in dataSet) {
                 if (dataSet.hasOwnProperty(key)) {
                     var elem = dataSet[key];
-                    if (detection.detectSpeed(elem.tD, elem.yD) && elem.speed == "fast"
-                        || !detection.detectSpeed(elem.tD, elem.yD) && elem.speed == "slow") {
+                    var res = detection.detectSpeed(elem.tD, elem.yD);
+                    if (res === null) continue;
+                    
+                    if (res && elem.speed == "fast"
+                        || !res && elem.speed == "slow") {
                         succCnt++;    
                     }
                     else {
-                        console.log("@failed on:", elem.speed);
+                        console.log("@failed on:key:", elem.key, ":speed:", elem.speed);
                     }
                     allCnt++;
                 }
             }
-            var allowedMissRatio = 0.72;
+            var allowedMissRatio = 0.95;
             assert(allowedMissRatio < succCnt / allCnt, 'Algorithm is worse than allowed miss ratio:' + allowedMissRatio + ':correct:' + succCnt + ":from:" + allCnt);
         })
     })

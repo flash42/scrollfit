@@ -4,11 +4,16 @@ function detectSpeed(tD, yD) {
     var i = 0;
     var fast = false;
     var maxSpeed = 0;
-    var avgSpeed = 0;
+    var cumulativeSpeed = 0;
+    if (tD.length < 3) {
+        console.log("@notEnoughData");
+        return null;
+    }
     for (; i < tD.length; i++) {
         if (tD[i] == 0) continue;
         
         var spd = Math.abs((yD[i] / tD[i]));
+        cumulativeSpeed += spd;
         if (maxSpeed < spd) {
             maxSpeed = spd;    
         }
@@ -17,7 +22,9 @@ function detectSpeed(tD, yD) {
             break;
         }
     }
+    
     console.log("@detectedMaxSpeed:", maxSpeed);
+    console.log("@detectedAvgSpeed:", cumulativeSpeed / (tD.length - 1));
     
     return fast;
 }
