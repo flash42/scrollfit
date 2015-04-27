@@ -9,7 +9,9 @@ var m_yD = [];
 var m_tD = [];
 var m_eventTimes = [];
 
-$("#speedValue").text(window.location.search.split('?')[1])
+$(".speedValue").each(function() {
+    $(this).text(window.location.search.split('?')[1]);
+})
 
 
 function resetHandler() {
@@ -70,7 +72,7 @@ detectCanvas.mousewheel(function(event) {
 });
 
 function saveMeasurement() {
-    console.log("@saveMeasurement:speed:", $('#speedValue').text(), ":yD:", yD, ":tD:", tD);
+    console.log("@saveMeasurement:speed:", $('.speedValue').text(), ":yD:", yD, ":tD:", tD);
     var myFirebaseRef = new Firebase("https://blinding-fire-1192.firebaseio.com/");
     myFirebaseRef.push(getMeasurements());
     resetMeasurement();
