@@ -88,17 +88,8 @@ function showResult(resultText) {
     
 }
 
-function detectSpeed() {
-    var i = 0;
-    var fast = false;
-    for (; i < m_tD.length; i++) {
-        if (m_tD[i] != 0 && 1.9 < Math.abs((m_yD[i] / m_tD[i]))) {
-            var spd = m_yD[i] / m_tD[i];
-            console.log("@detectSpeed:fast:yD:", m_yD[i], ":tD:", m_tD[i], ":speed:", spd);
-            fast = true;
-            break;
-        }
-    }
+function handleDetect(tD, yD) {
+    var fast = detectSpeed(m_tD, m_yD);
     showResult(fast ? "fast" : "slow");
     resetMeasurement();
 }
@@ -112,3 +103,4 @@ detectCtx.beginPath();
 detectCtx.font="20px Georgia";
 detectCtx.fillText("Scroll here", 25,75);
 detectCtx.stroke();
+

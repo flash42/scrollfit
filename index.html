@@ -24,7 +24,7 @@
         <br/>
         <button onclick="resetHandler()" style="font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; border: none; color: #fff; background-color: #ff3131; outline: 0;line-height: 14px; padding: 13px 25px; display: inline-block;">Reset data</button>
 
-        <button onclick="detectSpeed()" style="font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; border: none; color: #fff; background-color: #3181ff; outline: 0;line-height: 14px; padding: 13px 25px; display: inline-block;">Decide</button>
+        <button onclick="handleDetect()" style="font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; border: none; color: #fff; background-color: #3181ff; outline: 0;line-height: 14px; padding: 13px 25px; display: inline-block;">Decide</button>
 
         <canvas id='detect_canvas' width="150" height="150" style="margin-top: 10px; display:block; border: solid; border-color:green; border-width:1px;"></canvas>
     <div id="decisionResult">
@@ -33,5 +33,6 @@
 <script src="jquery-2.1.3.min.js"></script>
 <script src="jquery-mousewheel.js"></script>
 <script src="firebase.js"></script>
-<script src="test.js"></script>
+<script src="detection.js"></script>
+<script src="main.js"></script>
 </html>
