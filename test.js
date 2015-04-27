@@ -107,7 +107,8 @@ function detectSpeed() {
 measureCtx.beginPath();
 measureCtx.fillStyle = "black";
 measureCtx.font="20px Georgia";
-measureCtx.fillText("Scroll here", 0,75);
+measureCtx.fillText("Scroll here", 25,75);
 detectCtx.beginPath();
-detectCtx.arc(100,75,50,0,2*Math.PI);
+detectCtx.font="20px Georgia";
+detectCtx.fillText("Scroll here", 25,75);
 detectCtx.stroke();
