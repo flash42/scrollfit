@@ -10,6 +10,12 @@ var m_yD = [];
 var m_tD = [];
 var m_eventTimes = [];
 
+
+function resetHandler() {
+    resetMeasurement();
+    updateUI();
+}
+
 function resetMeasurement() {
     yD = [];
     tD = [];
@@ -83,8 +89,6 @@ function showResult(resultText) {
 }
 
 function detectSpeed() {
-    //    var myFirebaseRef = new Firebase("https://blinding-fire-1192.firebaseio.com/");
-    //    myFirebaseRef.push(getMeasurements());
     var i = 0;
     var fast = false;
     for (; i < m_tD.length; i++) {
