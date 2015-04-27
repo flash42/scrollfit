@@ -85,7 +85,7 @@ function showResult(resultText) {
 
 function handleDetect(tD, yD) {
     var fast = detectSpeed(m_tD, m_yD);
-    showResult(fast ? "fast" : "slow");
+    showResult(fast ? "fast" : "normal");
     resetMeasurement();
 }
 

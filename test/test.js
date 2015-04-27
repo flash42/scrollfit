@@ -17,7 +17,7 @@ describe('Detection algorithms', function() {
                     if (res === null) continue;
                     
                     if (res && elem.speed == "fast"
-                        || !res && elem.speed == "slow") {
+                        || !res && elem.speed == "normal") {
                         succCnt++;    
                     }
                     else {
