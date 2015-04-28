@@ -13,7 +13,7 @@ var otherSpeed = speed === "fast" ? "normal" : "fast";
 $(".speedValue").each(function() {
     $(this).text(speed);
 });
-$("#otherSpeedLink").attr("href", window.location.origin + "?" + otherSpeed);
+$("#otherSpeedLink").attr("href", window.location.origin + "/scrollfit?" + otherSpeed);
 
 
 function resetHandler() {
