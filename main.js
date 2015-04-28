@@ -8,10 +8,12 @@ var eventTimes = [];
 var m_yD = [];
 var m_tD = [];
 var m_eventTimes = [];
-
+var speed = window.location.search.split('?')[1];
+var otherSpeed = speed === "fast" ? "normal" : "fast";
 $(".speedValue").each(function() {
-    $(this).text(window.location.search.split('?')[1]);
-})
+    $(this).text(speed);
+});
+$("#otherSpeedLink").attr("href", window.location.origin + "?" + otherSpeed);
 
 
 function resetHandler() {
@@ -38,7 +40,17 @@ function getMeasurements() {
 
 function updateUI() {
     $("#dataToSend").empty();
-    $("#dataToSend").append(JSON.stringify(getMeasurements()));
+    if (3 < tD.length) {
+        $("#resetButton").css("visibility", "inherit")
+    }
+    if (3 < tD.length && tD.length < 300) {
+        $("#dataToSend").append('<strong><span style="margin-top: 8px; color: #aaba11; font-size: 24px; letter-spacing: 1.5px;">Looks good, hit send, and do one more!</span></strong>');
+        $("#sendButton").css("visibility", "inherit")
+    }
+    else {
+        $("#sendButton").css("visibility", "hidden")
+        $("#resetButton").css("visibility", "hidden")
+    }
 }
 
 // Event listeners

@@ -2,16 +2,24 @@
     <body style="overflow-y:scroll">
         <p>
         <div style="font-size: 48px; letter-spacing: 1.5px;">
-            Collect data about <strong><span class="speedValue"></span></strong> scrolling speed. 
+            Help defining <strong><span class="speedValue"></span></strong> scroll/swipe speed. 
         </div>
-        <div> We are collecting data to be able to detect <strong><span class="speedValue"></span></strong> scrolling speed here. Scroll in the below text area with your touchpad or mouse. Scroll <strong>once</strong> with the desired speed to make a succesful measurement. This is how you help us in defining <strong><span class="speedValue"></span></strong> scrolling speed!<br/>
-            Use Reset data if you think you made a mistake. Use Send data after you succesfully scrolled. <br/><br/>
-            Send multiple measurements if possible. Thanks!</div>
+        <div style="margin-top: 32px"> We are collecting Your input to be able to define <strong><span class="speedValue"></span></strong> scroll speed. For this you only need to use your mouse scroll or touchpad and we will measure the movements and save it for later use.<br/>
+            How to measure?<br/>
+            <ul>
+                <li>Scroll <strong>once</strong> with <strong><span class="speedValue"></span></strong> speed in the textbox below</li>
+                <li>Send Data button will appear. Click it to send the collected data.</li>
+            </ul>
+
+            Use Reset Data if you made a mistake and want to try again without sending data. <br/><br/>
+
+            <strong> Send multiple measurements and use <a id="otherSpeedLink">the other link</a> too! Thanks!</strong>
+        </div>
         <br/><br/>
 
-        <button onclick="resetHandler()" style="font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; border: none; color: #fff; background-color: #ff3131; outline: 0;line-height: 14px; padding: 13px 25px; display: inline-block;">Reset data</button>
+        <button id="resetButton" onclick="resetHandler()" style="visibility:hidden; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; border: none; color: #fff; background-color: #ff3131; outline: 0;line-height: 14px; padding: 13px 25px; display: inline-block;">Reset data</button>
 
-        <button onclick="saveMeasurement()" style="font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; border: none; color: #fff; background-color: #3181ff; outline: 0;line-height: 14px; padding: 13px 25px; display: inline-block;">Send data</button>
+        <button id="sendButton" onclick="saveMeasurement()" style="visibility:hidden; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; border: none; color: #fff; background-color: #3181ff; outline: 0;line-height: 14px; padding: 13px 25px; display: inline-block;">Send data</button>
         <textarea rows="14" cols="110" id="scrollArea" style="display: block; margin-top: 20px;margin-bottom:20px">
             ==================
             Top of the textbox
@@ -67,7 +75,7 @@
 
         </div>
         </p>
-    
+
     </body>
 <script src="jquery-2.1.3.min.js"></script>
 <script src="jquery-mousewheel.js"></script>
