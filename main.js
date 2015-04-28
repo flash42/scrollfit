@@ -32,7 +32,7 @@ function resetMeasurement() {
 
 function getMeasurements() {
     return {
-        speed: $('#speedValue').text(),
+        speed: speed,
         yD: yD,
         tD: tD
     }
@@ -84,7 +84,7 @@ detectCanvas.mousewheel(function(event) {
 });
 
 function saveMeasurement() {
-    console.log("@saveMeasurement:speed:", $('.speedValue').text(), ":yD:", yD, ":tD:", tD);
+    console.log("@saveMeasurement:speed:", speed, ":yD:", yD, ":tD:", tD);
     var myFirebaseRef = new Firebase("https://blinding-fire-1192.firebaseio.com/");
     myFirebaseRef.push(getMeasurements());
     resetMeasurement();
